@@ -21,13 +21,13 @@ To get started, clone a copy of this repo and get going!
 
 You will need Python 3.10 and Django 4.1. You will also need:
 
-gunicorn
-jinja2
-django-render-block
-pydantic
-pydantic-django
-django-htmx
-django-htmx-refresh
+-   gunicorn
+-   jinja2
+-   django-render-block
+-   pydantic
+-   pydantic-django
+-   django-htmx
+-   django-htmx-refresh
 
 
 ### Installing
@@ -52,7 +52,7 @@ You'll want to run the usual Django commands to get started. (Makemigrations and
 
 You will be able to upload html files that contain the slide data (per revealjs specifications) and add basic info (such as title and description.) You can also create events and attach the slideshow to the corresponding event.
 
-## Notes <a name = "notes></a>
+## Notes <a name = "notes"></a>
 
 This is very much a work in progress. Several features are missing and I need to add a lot more documentation.
 
