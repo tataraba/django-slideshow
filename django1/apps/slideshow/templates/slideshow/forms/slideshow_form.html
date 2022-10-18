@@ -1,0 +1,84 @@
+
+<div class="w-full max-w-lg mx-auto pt-12">
+<div class="flex w-full flex-wrap -mx-3 mb-3 justify-center">
+    <div class="w-10 md:w-1/2 px-3 mb-3 md:mb-0 text-center">
+        <button hx-get="/slideshows/add/new" hx-target="#add_slide" class="inline-flex w-44 items-center justify-center justify-self-center h-12 px-6 my-6 font-medium tracking-wide text-cyan-50 transition duration-200 rounded shadow-md bg-sky-900 hover:bg-sky-700 focus:shadow-outline focus:outline-none">Add New</button>
+    </div>
+    <!-- <div class="w-10 md:w-1/2 px-3 mb-3 md:mb-0 text-center">
+        <button hx-get="/slideshows/add/select" hx-target="#add_slide" class="inline-flex w-44 items-center justify-center justify-self-center h-12 px-6 my-6 font-medium tracking-wide text-cyan-50 transition duration-200 rounded shadow-md bg-sky-900 hover:bg-sky-700 focus:shadow-outline focus:outline-none">Select Existing</button>
+    </div> -->
+</div>
+</div>
+<form enctype="multipart/form-data" class="w-full max-w-lg mx-auto" method="post" action="/slideshows/add/">{% csrf_token %}
+    {% block add_or_select_slide %}
+    <div id="add_slide">
+    {% if select %}
+    <!--This isn't working right now. Would allow you to select existing file in directory and add details for slideshow db record.-->
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+        <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_slideshow">Slideshow HTML File:</label>
+            <select class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2" name="slideshow" required="" id="id_slideshow">
+                <option value="" selected="">---------</option>
+                {% for file in files %}
+                <option value="{{ file.name }}">{{ file.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    {% elif add %}
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+        <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_slide_file">Upload Slideshow File:</label>
+        <input class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2" type="file" name="slide_file" id="id_slide_file">
+        </div>
+    </div>
+    {% endif %}
+    {% if slide_author %}
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+        <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_author">Author:</label>
+            <select class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2" name="author" required="" id="id_author">
+                <option value="" selected="">---------</option>
+                <option value="{{ slide_author.id }}">{{slide_author.first_name}} {{slide_author.last_name}}</option>
+            </select>
+        </div>
+    </div>
+    {% endif %}
+    </div>
+    {% endblock %}
+    <div class="flex w-full flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+            <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_title">Title:</label>
+            <input class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2 focus:outline-none focus:bg-white" type="text" name="title" maxlength="512" required="" id="id_title">
+        </div>
+    </div>
+    <!-- <div class="flex w-full flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+            <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_subject">Subject:</label>
+            <input class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2 focus:outline-none focus:bg-white" type="text" name="subject" maxlength="100" required="" id="id_subject">
+        </div>
+    </div> -->
+    <div class="flex flex-wrap -mx-3 mb-3">
+        <div class="w-full px-3">
+            <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_abstract">Description:</label>
+            <textarea class="appearance-none block w-full h-56 bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2 focus:outline-none focus:bg-white" name="abstract" id="id_abstract"></textarea>
+        </div>
+    </div>
+
+    <div class="flex flex-wrap -mx-3 mb-3 justify-between">
+        <div class="w-10 md:w-1/4 px-3 mb-3 md:mb-0">
+            <label class="text-slate-600 text-xs uppercase tracking-wider" for="id_length_in_minutes">Length:</label>
+            <input class="appearance-none block w-full bg-blue-50 text-slate-800 border rounded px-2 py-1 mb-2 focus:outline-none focus:bg-white" type="number" name="length_in_minutes" maxlength="6" required="" id="id_length_in_minutes">
+        </div>
+
+        <div class="w-10 md:w-1/4 px-3 pb-2 md:mb-0 self-end">
+            <label class="text-slate-600 text-xs uppercase tracking-wider mb-4" for="id_featured">Featured:</label>
+            <input class="bg-blue-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded" type="checkbox" name="featured" id="id_featured">
+        </div>
+    </div>
+
+    <div class="flex items-center sm:justify-center">
+    <button class="inline-flex items-center justify-center justify-self-center h-12 px-6 my-6 font-medium tracking-wide text-cyan-50 transition duration-200 rounded shadow-md bg-sky-900 hover:bg-sky-700 focus:shadow-outline focus:outline-none" type="submit" value="Save">Save Slideshow</button>
+    </div>
+</form>
+

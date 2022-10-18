@@ -1,0 +1,56 @@
+{% extends "slideshow/partials/_base.html" %}
+
+{% block reveal_styles %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'slideshow/reveal/dist/reveal.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'slideshow/reveal/dist/theme/white-pbn.css' %}" type="text/css" />
+<link rel="stylesheet" href="{% static 'slideshow/reveal/plugin/highlight/monokai.css' %}" type="text/css" />
+{% endblock %}
+
+{% block nav %}
+{% include "slideshow/partials/_nav.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="mb-16">
+  <div class="bg-stone-100">
+      <div class="px-4 py-16 mx-auto h-screen sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div class="reveal h-full relative">
+          <div class="slides">
+
+
+            {{ slide_text|safe }}
+            <!-- Slide html files should only contain the <section> tags used by
+            reveal.js to create the individual slides. -->
+
+          </div>
+          <div class="flex justify-between w-full px-4 text-cyan-600 absolute -top-3">
+            <p class="text-base">@PythonByNight</p>
+            <p class="text-base">pythonbynight@gmail.com</p>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block reveal_script_init %}
+<script src="{% static 'slideshow/reveal/dist/reveal.js' %}"></script>
+<script src="{% static 'slideshow/reveal/plugin/notes/notes.js' %}"></script>
+<script src="{% static 'slideshow/reveal/plugin/markdown/markdown.js' %}"></script>
+<script src="{% static 'slideshow/reveal/plugin/highlight/highlight.js' %}"></script>
+<script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+        embedded: true,
+        hash: true,
+        transition: "fade",
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+    });
+</script>
+{% endblock %}

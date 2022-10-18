@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Mario's Slideshow App</title>
+  <meta name="description" content="Django Slideshow App"/>
+  <meta name="keywords" content="Django slideshow">
+  <meta name="HandheldFriendly" content="True"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <meta name="theme-color" content="#cccccc"/>
+  <meta property="og:site_name" content="{{ title }}"/>
+  <meta property="og:type" content="Django Slideshow - DjangoPoint"/>
+  <meta property="og:title" content="{{ title }}"/>
+  <meta property="og:description"  content="Django Slideshow App"/>
+  <meta property="og:url" content="http://www.pythonbynight.com"/>
+  <meta name="twitter:title" content="Django Slideshow App">
+  <meta name="twitter:site" content="@PythonByNight">
+  <meta name="twitter:description" content="Django Slideshow App">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:widgets:border-color" content="hsl(168, 40%, 75%)">
+  <meta name="twitter:widgets:theme" content="dark">
+  <meta name="twitter:widgets:border-color" content="hsl(168, 40%, 75%)">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'slideshow/css/main.css' %}" type="text/css" />
+  {% block reveal_styles %}
+  {% endblock %}
+</head>
+
+<body>
+
+{% block nav %}
+{% include "slideshow/partials/_nav.html" %}
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+<script src="{% static 'slideshow/js/htmx.min.js' %}"></script>
+<script>
+  document.body.addEventListener('htmx:configRequest', (event) => {
+    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+  })
+</script>
+{% block reveal_script_init %}
+{% endblock %}
+</body>
+</html>

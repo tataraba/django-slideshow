@@ -1,0 +1,56 @@
+{% if events %}
+
+
+{% for event in events %}
+<div class="flex flex-row flex-wrap w-full max-w-2xl mx-auto my-4 p-4 border border-cyan-700 rounded-md">
+
+    <div class="flex w-1/2 flex-wrap mb-2">
+        <div class="w-full uppercase font-bold text-cyan-900">Event</div>
+        <div class="mx-2 text-cyan-900"><a href="/event/{{event.id}}/{{event.slug}}">{{ event.name }} {{ event.start_date|date:'Y' }}</a></div>
+    </div>
+
+    <div class="flex w-1/2 flex-wrap mb-2">
+        <div class="flex w-full flex-wrap uppercase font-bold text-cyan-900">Dates</div>
+        <div class="mx-2 text-cyan-900">{{ event.start_date|date:'M d' }} - {{event.end_date}}</div>
+    </div>
+    <div class="flex flex-row flex-wrap w-full" hx-target="this">
+        {% block more_details %}
+        {% if not more_details_visible %}
+        <div class="flex w-full justify-end -mt-3 mr-4">
+            <p hx-get="/events" hx-headers='{"Event-ID-More": "{{event.id}}"}' class=" text-xs text-cyan-700 hover:text-cyan-600 cursor-pointer">+ more</p>
+        </div>
+        {% endif %}
+        {% if more_details_visible %}
+
+        <div class="flex w-full" id="more_details">
+            <div class="flex w-1/2 flex-wrap mb-2">
+                <div class="flex w-full flex-wrap uppercase font-bold text-cyan-900">Venue</div>
+                <div class="mx-2 text-cyan-900">{{event.venue}}</div>
+            </div>
+
+            <div class="flex w-1/2 flex-wrap mb-2">
+                <div class="flex w-full flex-wrap uppercase font-bold text-cyan-900">Location</div>
+                <div class="mx-2 text-cyan-900 w-full">{{event.city}}, {{event.state}}</div>
+            </div>
+        </div>
+        <div class="flex w-full flex-wrap mb-2">
+            <div class="flex w-full flex-wrap uppercase font-bold text-cyan-900">Presentation Slideshow</div>
+            <div class="mx-2 text-cyan-900 w-full"><a href="/slide/{{show.slug}}">{{event.slideshow.title}}</a></div>
+        </div>
+
+        <div class="flex w-full justify-end -mt-3 mr-4">
+            <p hx-get="/events" hx-headers='{"Event-ID-Less": "{{event.id}}"}' class="text-xs text-cyan-700 hover:text-cyan-600 cursor-pointer">- less</p>
+        </div>
+        {% endif %}
+        {% endblock %}
+    </div>
+</div>
+
+{% endfor %}
+
+
+{% else %}
+<div>
+    <p class="text-lg text-rose-600 text-center">No events in your list as of yet.</p>
+</div>
+{% endif %}

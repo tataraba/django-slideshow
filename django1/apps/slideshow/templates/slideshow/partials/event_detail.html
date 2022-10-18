@@ -1,0 +1,35 @@
+<div class="flex flex-col mx-auto w-max items-center border border-cyan-700 rounded-lg sm:justify-center my-8 lg:my-10">
+    <h3 class="text-4xl pt-2 pb-4 bg-blue-100 text-cyan-900 rounded-t-md w-full tracking-wide text-center font-bold">{{ event.name }}</h3>
+    <div class="flex flex-col text-base bg-blue-50 w-full place-items-center pt-4">
+        <p class="text-sm uppercase text-cyan-800">{{ event.venue }}</p>
+    </div>
+    <div class="flex flex-col text-base bg-blue-50 w-full place-items-center py-4">
+        <p>{{ event.start_date }}</p>
+        <p class="uppercase text-xs text-slate-400">through</p>
+        <p>{{ event.end_date }}</p>
+    </div>
+    <div class="flex flex-col text-base bg-blue-50 w-full place-items-center py-4">
+        <p class="uppercase text-xs text-slate-400">Presenting</p>
+        <p>{{ event.presentation_date }}</p>
+    </div>
+    <div class="bg-blue-100 rounded-b-md py-4">
+        <p class="uppercase text-xs text-slate-400 text-center pt-1">Talk Title</p>
+        <h4 class="text-2xl px-20 pb-1 text-cyan-800 font-bold">
+            <a href="/slide/{{event.slideshow.slug}}">{{event.slideshow.title}}</a>
+        </h4>
+    </div>
+</div>
+<div class="flex flex-col mx-auto w-max items-center sm:justify-center my-4 lg:my-6">
+    {% if event.website %}
+    <p class="uppercase text-xs text-slate-400 pt-1">Website</p>
+    <p class="text-base px-20 pb-1 text-orange-800 cursor-pointer">
+        {{event.website}}
+    </p>
+    {% endif %}
+    {% if event.contact_email %}
+    <p class="uppercase text-xs text-slate-400 pt-1">contact email</p>
+    <p class="text-base px-20 pb-1 text-orange-800 cursor-pointer">
+        {{event.contact_email}}
+    </p>
+    {% endif %}
+</div>
