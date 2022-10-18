@@ -24,6 +24,10 @@ You will need Python 3.10 and Django 4.1. You will also need:
 gunicorn
 jinja2
 django-render-block
+pydantic
+pydantic-django
+django-htmx
+django-htmx-refresh
 
 
 ### Installing
