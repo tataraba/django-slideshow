@@ -42,8 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "debug_toolbar",
-    "django_htmx",
-    "django_htmx_refresh",
 
     "django1.apps.core",
     "django1.apps.slideshow",
