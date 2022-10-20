@@ -65,6 +65,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "django-simple-deploy"
+version = "0.5.5"
+requires_python = ">=3.8"
+summary = "A management command that auto-configures a Django project for deployment."
+dependencies = [
+    "Django>=3.0",
+]
+
+[[package]]
 name = "djantic"
 version = "0.7.0"
 requires_python = ">=3.7"
@@ -107,6 +116,11 @@ summary = "Core utilities for Python packages"
 dependencies = [
     "pyparsing!=3.0.5,>=2.0.2",
 ]
+
+[[package]]
+name = "platformshconfig"
+version = "2.4.0"
+summary = "Small helper to access Platform.sh environment variables."
 
 [[package]]
 name = "pluggy"
@@ -190,7 +204,7 @@ summary = "Provider of IANA time zone data"
 
 [metadata]
 lock_version = "4.0"
-content_hash = "sha256:ca6b83c5034c3bc2945938c87f4c17acbc2ef54be33179eec234f1ab847806ee"
+content_hash = "sha256:ee6bb4580851ab54c4dfa1832837fa2d167b8f5bf667fd5abda172d78d5989bb"
 
 [metadata.files]
 "asgiref 3.5.2" = [
@@ -224,6 +238,10 @@ content_hash = "sha256:ca6b83c5034c3bc2945938c87f4c17acbc2ef54be33179eec234f1ab8
 "django-render-block 0.9.1" = [
     {url = "https://files.pythonhosted.org/packages/d2/bf/4a5dea9626aaab23e464aa000d30775f69fa98a6cbd1056f67f804852b2d/django-render-block-0.9.1.tar.gz", hash = "sha256:a01bfdb839e2f6b3f88a99021597484392bbd15d084f9a796e3e5658bae800f4"},
     {url = "https://files.pythonhosted.org/packages/fd/d0/c43e70bfcb8ca04689140fdcbdc37fea15283f2e9da668bcfa52e28caa9f/django_render_block-0.9.1-py3-none-any.whl", hash = "sha256:fbdd8be56cefcfd794756a2e62117cc031f9c5de3ef4bb53e9a3f877a359a1a7"},
+]
+"django-simple-deploy 0.5.5" = [
+    {url = "https://files.pythonhosted.org/packages/9e/dd/c0f0d81a844b7d4e4d51a08fcb7515adf1a0e0226753c7f788371eef8758/django-simple-deploy-0.5.5.tar.gz", hash = "sha256:98facc21992496edfcafb058b8f6a292e5380fc7811a4679c9a06dd7ffe327be"},
+    {url = "https://files.pythonhosted.org/packages/e2/da/b71ca69422146f31d4dfeab944d4d64c775dd8db41cb7fa66ab2f9f4292b/django_simple_deploy-0.5.5-py3-none-any.whl", hash = "sha256:86d040c762793888cfad77b5eaffb91bc5ad841a93d2f6bd56e932254ecdd42f"},
 ]
 "djantic 0.7.0" = [
     {url = "https://files.pythonhosted.org/packages/51/3c/d261d929fab71ffc95cd874934e26053d0ecddcca325f3cb7fddfc4e27de/djantic-0.7.0-py3-none-any.whl", hash = "sha256:1ea0e6560d41e2d2350d8bb6a173ed8b1bcdd86fa8af5d0b7748e3609a8d5924"},
@@ -286,6 +304,10 @@ content_hash = "sha256:ca6b83c5034c3bc2945938c87f4c17acbc2ef54be33179eec234f1ab8
 "packaging 21.3" = [
     {url = "https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl", hash = "sha256:ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"},
     {url = "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz", hash = "sha256:dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb"},
+]
+"platformshconfig 2.4.0" = [
+    {url = "https://files.pythonhosted.org/packages/0d/77/c0e41d5b0383c594bfd09489df616e6185ac3b319cc5360f13dba8d7b87b/platformshconfig-2.4.0-py3-none-any.whl", hash = "sha256:ff1e29719d2789f6d164e1abd42dbecec1c535e5e741161ba177cec34bfdd6de"},
+    {url = "https://files.pythonhosted.org/packages/74/8c/7bd0f1c2f5e9e0dc0c1dcd04bec3ad89137bc864f98b8740ad9da05f9b15/platformshconfig-2.4.0.tar.gz", hash = "sha256:3eb95a514de57ce3341690fd3e0a61e6fa8c858a0793810a29fcce40691254a2"},
 ]
 "pluggy 1.0.0" = [
     {url = "https://files.pythonhosted.org/packages/9e/01/f38e2ff29715251cf25532b9082a1589ab7e4f571ced434f98d0139336dc/pluggy-1.0.0-py2.py3-none-any.whl", hash = "sha256:74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"},
