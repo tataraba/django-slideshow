@@ -42,9 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "debug_toolbar",
-    "simple_deploy",
 
-    "django1.apps.core",
     "django1.apps.slideshow",
 ]
 
