@@ -1,5 +1,5 @@
 """
-WSGI config for django1 project.
+WSGI config for slidjo project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django1.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "slidjo.settings")
 
 application = get_wsgi_application()

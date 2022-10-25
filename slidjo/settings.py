@@ -5,7 +5,7 @@ from pydantic import BaseSettings
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_URL = '/media/'
-MEDIA_ROOT = Path(BASE_DIR / "django1/apps/slideshow/uploads/")
+MEDIA_ROOT = Path(BASE_DIR / "slidjo/apps/slideshow/uploads/")
 
 
 class EnvConfiguration(BaseSettings):
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 
     "debug_toolbar",
 
-    "django1.apps.slideshow",
+    "slidjo.apps.slideshow",
 ]
 
 HTMX_APPS = [
@@ -65,7 +65,7 @@ MIDDLEWARE = [
 ]
 
 X_FRAME_OPTIONS = 'DENY'
-ROOT_URLCONF = "django1.urls"
+ROOT_URLCONF = "slidjo.urls"
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "django1.wsgi.application"
+WSGI_APPLICATION = "slidjo.wsgi.application"
 
 
 # Database

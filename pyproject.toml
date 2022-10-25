@@ -1,7 +1,7 @@
 [project]
-name = ""
-version = ""
-description = ""
+name = "Django Slideshow"
+version = "0.0.1"
+description = "A perfectly simple Django Slideshow App"
 authors = [
     {name = "Mario Munoz", email = "pythonbynight@gmail.com"},
 ]
@@ -36,5 +36,5 @@ python_version = "3.10"
 ignore_missing_imports = true
 ignore_missing_imports_per_module = true
 files = [
-    "./django1"
+    "./slidjo"
 ]

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./django1/**/*.html"],
+  content: ["./slidjo/**/*.html"],
   theme: {
   },
   plugins: [],

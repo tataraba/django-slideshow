@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 
 def slides_path():
-    return Path(settings.BASE_DIR / "django1/apps/slideshow/templates/slideshow/slides")
+    return Path(settings.BASE_DIR / "slidjo/apps/slideshow/templates/slideshow/slides")
 
 
 class SlideShow(models.Model):

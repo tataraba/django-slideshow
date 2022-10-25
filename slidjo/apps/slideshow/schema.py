@@ -1,5 +1,5 @@
-from django1.apps.slideshow.models import Event, SlideShow
 from djantic import ModelSchema
+from slidjo.apps.slideshow.models import Event, SlideShow
 
 
 class SlideShowSchema(ModelSchema):
@@ -10,4 +10,3 @@ class SlideShowSchema(ModelSchema):
 class EventSchema(ModelSchema):
     class Config:
         model = Event
-
