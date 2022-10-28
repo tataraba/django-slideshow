@@ -40,7 +40,7 @@ Here are the libraries we will be using (instructions below on installing them)
 -   django-htmx
 -   django-htmx-refresh
 
-### 🖥️ Installing
+## 🖥️ Installing
 
 If you use a package manager, you can install directly from the `pyproject.toml` file, which makes this process a little more straight forward. I happen to use `pdm` as my package manager, but it's not required.
 
