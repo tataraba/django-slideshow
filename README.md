@@ -1,6 +1,6 @@
 # A Perfectly Simple Django Slideshow App
 
-![GitHub repo size](https://img.shields.io/github/repo-size/tataraba/django-slideshow?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/tataraba/django-slideshow?style=flat-square) ![GitHub](https://img.shields.io/github/license/tataraba/django-slideshow?style=flat-square) ![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FPythonByNight)
+![GitHub repo size](https://img.shields.io/github/repo-size/tataraba/django-slideshow?style=flat-square) ![GitHub issues](https://img.shields.io/github/issues/tataraba/django-slideshow?style=flat-square) ![GitHub](https://img.shields.io/github/license/tataraba/django-slideshow?style=flat-square) [![Twitter URL](https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2FPythonByNight)](https://twitter.com/PythonByNight)
 ## Table of Contents
 
 - [About](#about)
