@@ -9,13 +9,13 @@
 - [Notes](#notes)
 - [Contributions?](#contributing)
 
-## About <a name = "about"></a>
+## :high_brightness: About <a name = "about"></a>
 
-This is an app that does something. That "something" is a way to organize my revealjs slideshows and attach them to events where they are presented.
+This is an app that does something. That "something" is a way to organize revealjs slideshows and attach them to events where they are presented.
 
-NOTE: Documentation is work in progress. I will update with better instructions.
+_NOTE: Documentation is work in progress._
 
-## Getting Started <a name = "getting_started"></a>
+## 🏁  Getting Started <a name = "getting_started"></a>
 
 To get started, clone a copy of this repo and get going!
 
@@ -27,7 +27,7 @@ git clone https://github.com/tataraba/django-slideshow.git
 
 ### Requirements
 
-Make sure you have Python 3.10 installed (somewhere) in your system.
+Make sure you have Python 3.10 (or 3.11! ✨) installed (somewhere) in your system.
 
 Here are the libraries we will be using (instructions below on installing them)
 
@@ -40,11 +40,11 @@ Here are the libraries we will be using (instructions below on installing them)
 -   django-htmx
 -   django-htmx-refresh
 
-### Installing
+### 🖥️ Installing
 
 If you use a package manager, you can install directly from the `pyproject.toml` file, which makes this process a little more straight forward. I happen to use `pdm` as my package manager, but it's not required.
 
-
+If you don't use `pdm`, go about it the traditional way, like so (these instructions are for Windows PowerShell users. Use the equivalent commands if on another OS/platform):
 
 ```py
 # First, Create a virtual environment
@@ -58,11 +58,17 @@ python -m pip install -r requirements.txt
 ```
 
 Optional: If you are using `pdm`, all you would have to do instead is type:
-```
+```py
+# Install dependencies
 pdm install
+
+# Activate virtual environment (created by pdm with above command)
+.\.venv\Scripts\activate
 ```
 
-At this point, you should have a working Django app. If you're not familiar with Django, you will likely need to get acquainted with some of the Django `manage.py` commands. However, if you just want to start poking around, run these two commands:
+At this point, you should have a working Django app! :balloon:
+
+If you're not familiar with Django, you will likely need to get acquainted with some of the Django `manage.py` commands. However, if you just want to start poking around, run these two commands:
 
 ```py
 # The `migrate` command turns the Django models into database tables
@@ -72,17 +78,19 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-And that's it. You should be able to navigate to http://127.0.0.1:8000 and see the landing page for a Perfectly Simple Django Slidshew App (slidjo for short).
+And that's it!
 
-## Usage <a name = "usage"></a>
+You should be able to navigate to http://127.0.0.1:8000 and see the landing page for a **Perfectly Simple Django Slidshew App** (_slidjo_ for short).
 
-The slidjo app allows you to create slideshows using [reveal.js](https://revealjs.com).
+## :hammer: Usage <a name = "usage"></a>
 
-All you need to do is create an html file containing only the appropriate revealjs markup, and then upload that file using the "Create Slideshow" feature.
+The _slidjo_ app allows you to create slideshows using [reveal.js](https://revealjs.com).
+
+All you need to do is create an `html` file containing only the appropriate revealjs markup, and then upload that file using the "Create Slideshow" feature.
 
 You'll be able to add a title and description for your slideshow, and later, add it to "Events" that you can also create within the app.
 
-More details on this will be coming later, but for the most part, your file might look like this:
+More details on this will be coming later, but as a quick primer, your `html` file might look like this:
 
 ```html
 <!-- sample.html -->
@@ -114,10 +122,11 @@ Additionally, if you'd prefer to write your slides in markdown, your file can lo
     </textarea>
 </section>
 ```
+> Note that in neither case, you have to add `<head>` or `<body>` tags or anything like that. This is intended. Those pieces are added by templates automatically.
 
-Obviously, the slides can get much fancier than that, but for that, you'll have to look through the [revealjs documentation](https://revealjs.com/markup/).
+Obviously, the slides can get much fancier than these examples, but for more on that, you'll have to look through the [revealjs documentation](https://revealjs.com/markup/).
 
-## Notes <a name = "notes"></a>
+## :notes: Notes <a name = "notes"></a>
 
 This is very much a work in progress. Several features are missing and I need to add a lot more documentation.
 
@@ -128,12 +137,12 @@ Some of the things I want to add:
 -   Data validation for several fields
     -   End date > Start date
     -   Support for online-only events
-    -   More pizzaz
+    -   Ensuring the "featured" field working as expected
 -   Ability to add multiple slideshows to one event (many to many relationship instead of one to many)
 -   Add tests!
 -   Documentation on how to use tailwind to further optimize the look and feel
 
-## Contributions? <a name = "contributing"></a>
+## 💗 Contributions? <a name = "contributing"></a>
 
 I am considering opening up this project for contributions. I have no idea how to manage a project, though, so for now, 🤷‍♂️...
 
